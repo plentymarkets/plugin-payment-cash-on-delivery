@@ -1,0 +1,36 @@
+[
+  {
+    "key": "name",
+    "label": "Name",
+    "type": "text",
+    "default": "Nachnahme"
+  },
+  {
+    "key": "logo",
+    "label": "Logo",
+    "type": "dropdown",
+    "possibleValues":
+    {
+      "0": "Default-Logo",
+      "1": "Without-Logo"
+    },
+    "default": "0"
+  },
+  {
+    "key": "active",
+    "label": "Aktiv",
+    "type": "dropdown",
+    "possibleValues":
+    {
+      "0": "Nein",
+      "1": "Ja"
+    },
+    "default": "0"
+  },
+  {
+    "key": "url",
+    "label": "Logo URL",
+    "type": "text",
+    "default": "https://shimg.csl-computer.com/templates/xtc2/images/payment_logos/nachnahme_240px.jpg"
+  },
+]
