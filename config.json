@@ -1,11 +1,13 @@
 [
   {
+    "tab": "Settings",
     "key": "name",
     "label": "Name",
     "type": "text",
     "default": "Nachnahme"
   },
   {
+    "tab": "Settings",
     "key": "logo",
     "label": "Logo",
     "type": "dropdown",
@@ -17,6 +19,7 @@
     "default": "0"
   },
   {
+    "tab": "Settings",
     "key": "active",
     "label": "Aktiv",
     "type": "dropdown",
@@ -28,9 +31,10 @@
     "default": "0"
   },
   {
+    "tab": "Settings",
     "key": "url",
     "label": "Logo URL",
     "type": "text",
     "default": "https://shimg.csl-computer.com/templates/xtc2/images/payment_logos/nachnahme_240px.jpg"
-  },
+  }
 ]

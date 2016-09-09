@@ -3,7 +3,7 @@
   "name": "CashOnDelivery",
   "description": "cash on delivery plugin for plentymarkets",
   "author": "plentymarkets GmbH",
-  "keywords": ["cash on delivery", "CashOnDelivery" "Nachnahme", "official", "plentymarkets", "payment"],
+  "keywords": ["cash on delivery", "CashOnDelivery", "Nachnahme", "official", "plentymarkets", "payment"],
   "type": "payment",
   "namespace": "CashOnDelivery",
   "require": [],
