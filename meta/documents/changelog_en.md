@@ -4,5 +4,5 @@
 
 ### Features
 
-- Zahlungsart **Nachnahme** für plentymarkets Webshops.
-- Nur in Verbindung mit entsprechendem Versandprofil nutzbar.
+- Payment method **Cash on delivery** for plentymarkets online stores.
+- Only available with compatible shipping profiles.
