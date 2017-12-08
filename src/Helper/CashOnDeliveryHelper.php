@@ -8,7 +8,7 @@ class CashOnDeliveryHelper
     {
     }
 
-    public function getMop():mixed
+    public function getMop()
     {
         return 1;
     }
