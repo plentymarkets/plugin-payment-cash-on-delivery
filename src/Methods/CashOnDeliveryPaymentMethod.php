@@ -8,6 +8,10 @@ use Plenty\Modules\Order\Shipping\Contracts\ParcelServicePresetRepositoryContrac
 use Plenty\Modules\Order\Shipping\ParcelService\Models\ParcelServicePreset;
 use Plenty\Modules\Frontend\Contracts\Checkout;
 use Plenty\Plugin\Application;
+use PrePayment\Services\SessionStorageService;
+use Plenty\Modules\Basket\Contracts\BasketRepositoryContract;
+use IO\Helper\UserSession;
+use Plenty\Modules\Account\Contact\Contracts\ContactRepositoryContract;
 
 /**
  * Class CashOnDeliveryPaymentMethod
@@ -30,14 +34,28 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodService
      */
     protected $parcelServicePresetRepoContract;
 
+    /**
+     * @var BasketRepositoryContract
+     */
+    protected $basketRepo;
+
+    /**
+     * @var ContactRepositoryContract
+     */
+    protected $contactRepository;
+
     public function __construct(
         ConfigRepository $config,
         Checkout $checkout, 
-        ParcelServicePresetRepositoryContract $parcelServicePresetRepoContract)
+        ParcelServicePresetRepositoryContract $parcelServicePresetRepoContract,
+        BasketRepositoryContract $basketRepo,
+        ContactRepositoryContract $contactRepository)
     {
         $this->config = $config;
         $this->checkout = $checkout;
         $this->parcelServicePresetRepoContract = $parcelServicePresetRepoContract;
+        $this->basketRepo = $basketRepo;
+        $this->contactRepository = $contactRepository;
     }
 
     /**
@@ -46,6 +64,8 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodService
      */
     public function isActive():bool
     {
+        $codAvailable = false;
+        
         $shippingProfilId = $this->checkout->getShippingProfileId();
         /** @var ParcelServicePreset */
         $parcelPreset = $this->parcelServicePresetRepoContract->getPresetById($shippingProfilId);
@@ -56,7 +76,40 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodService
                 return true;
             }
         }
+        
+        $contact = null;
+        /** @var UserSession */
+        $userSession = pluginApp(UserSession::class);
+        $contactId = $userSession->getCurrentContactId();
+        if($contactId > 0) {
+            $contact = $this->contactRepository->findContactById($this->getContactId());
+        }
 
+        /** @var SessionStorageService $sessionService */
+        $sessionService = pluginApp(SessionStorageService::class);
+        $params  = [
+            'countryId'  => $this->checkout->getShippingCountryId(),
+            'webstoreId' => pluginApp(Application::class)->getWebstoreId(),
+        ];
+        $list    = $this->parcelServicePresetRepoContract->getLastWeightedPresetCombinations($this->basketRepo->load(), $contact->classId, $params);
+        
+        foreach($list as $id => $parcelService) {
+            $parcelPreset = $this->parcelServicePresetRepoContract->getPresetById($shippingProfilId);
+            if($parcelPreset instanceof ParcelServicePreset) {
+                if((bool)$parcelPreset->isCod) {
+                    $codAvailable = true;
+                }
+            }
+        }
+
+        return $codAvailable;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isSelectable()
+    {
         return false;
     }
 
