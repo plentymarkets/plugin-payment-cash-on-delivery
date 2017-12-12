@@ -17,7 +17,7 @@ Bevor die Zahlungsart in Ihrem Webshop verfügbar ist, müssen Sie Einstellungen
 
 ## Details der Zahlungsart im Webshop anzeigen
 
-Das Template-Plugin **Ceres** bietet Ihnen die Möglichkeit, Name und Logo Ihrer Zahlungsart im Bestellvorgang individuellanzeigen können. Gehen Sie wie im Folgenden beschrieben vor, um Name und Logo der Zahlungsart anzuzeigen.
+Das Template-Plugin **Ceres** bietet Ihnen die Möglichkeit, Name und Logo Ihrer Zahlungsart im Bestellvorgang individuell anzeigen können. Gehen Sie wie im Folgenden beschrieben vor, um Name und Logo der Zahlungsart anzuzeigen.
 
 ##### Details zur Zahlungsart einrichten:
 

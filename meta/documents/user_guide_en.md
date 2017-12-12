@@ -1,38 +1,37 @@
-# plentymarkets Payment – Nachnahme
+# plentymarkets Payment&nbsp;– Cash on delivery
 
-Mit diesem Plugin binden Sie die Zahlungsart **Nachnahme** in Ihren Webshop ein.
+With this plugin, you integrate the payment method **Cash on delivery** into your online store.
 
-## Zahlungsart einrichten
+## Setting up a payment method
 
-Bevor die Zahlungsart in Ihrem Webshop verfügbar ist, müssen Sie Einstellungen in Ihrem plentymarkets Backend vornehmen.
+In order to make this payment method available in your online store, you have to carry out the settings in the plentymarkets back end.
 
-##### Zahlungsart einrichten:
+##### Setting up a payment method:
 
-1. Öffnen Sie das Menü **System&nbsp;» Aufträge&nbsp;» Versand » Optionen**.
-2. Wechseln Sie in das Tab **Versandprofile**.
-3. Setzen Sie einen Haken bei **Nachnahme**.
-4. Wechseln Sie in das Tab **Portotabelle**.
-
+1. Go to **System&nbsp;» Orders&nbsp;» Shipping » Options**.
+2. Go to the tab **Shipping profiles**.
+3. Activate the option **Cash on delivery**.
+4. Go to the tab **Table of shipping charges**.
 5. Carry out the settings. Pay attention to the information on <a href="https://knowledge.plentymarkets.com/en/order-processing/fulfilment/preparing-the-shipment#1500"><strong>Shipping profiles</strong></a>.
 5. **Save** the settings.
 
-## Details der Zahlungsart im Webshop anzeigen
+## Displaying the payment method in the online store
 
-Das Template-Plugin **Ceres** bietet Ihnen die Möglichkeit, Name und Logo Ihrer Zahlungsart im Bestellvorgang individuellanzeigen können. Gehen Sie wie im Folgenden beschrieben vor, um Name und Logo der Zahlungsart anzuzeigen.
+The template plugin **Ceres** provides the option to display an individual name and logo for a payment method in the checkout. Proceed as follows to display name and logo for this payment method.
 
-##### Name und Logo einrichten:
+##### Setting up name and logo:
 
-1. Gehen Sie zu **Plugins » Plugin-Übersicht**.
-2. Klicken Sie auf das Plugin **Nachnahme**.
-3. Klicken Sie auf **Konfiguration**.
-4. Geben Sie unter **Name** den Namen ein, der für die Zahlungsart angezeigt werden soll.
-5. Geben sie unter **Logo-URL** eine https-URL ein, die zum Logo-Bild führt. Gültige Dateiformate sind .gif, .jpg oder .png. Die Maximalgröße beträgt 190 Pixel in der Breite und 60 Pixel in der Höhe. 
-5. **Speichern** Sie die Einstellungen.<br />→ Name und Logo der Zahlungsart werden im Bestellvorgang des Webshops angezeigt.
+1. Go to **Plugins » Plugin overview**.
+2. Click on the plugin **Cash on delivery**.
+3. Click on **Configuration**.
+4. Under **Name**, enter the name to be displayed for the payment method.
+5. Under **Logo URL**, enter an https URL that leads to the logo. Valid file formats are .gif, .jpg or .png. The image may not exceed a maximum size of 190 pixels in width and 60 pixels in height.
+5. **Save** the settings.<br />→ Name and logo for the payment method are displayed in the checkout.
 
-## Zahlungsart auswählen
+## Selecting the payment method
 
-Nach erfolgreicher Einrichtung wird Nachnahme unter den verfügbaren Versandprofilen angezeigt. Bei Auswahl dieser Option wird Nachnahme automatisch als Zahlungsart ausgewählt und der angegebene Aufpreis angezeigt.
+After the successful setup, Cash on delivery will be displayed in the list of available shipping profiles. When selected, Cash on delivery will be activated as payment method and the respective surcharge will be displayed
 
-## Lizenz
- 
-Das gesamte Projekt unterliegt der GNU AFFERO GENERAL PUBLIC LICENSE – weitere Informationen finden Sie in der [LICENSE.md](https://github.com/plentymarkets/plugin-payment-invoice/blob/master/LICENSE.md).
+## License
+
+This project is licensed under the GNU AFFERO GENERAL PUBLIC LICENSE. – find further information in the [LICENSE.md](https://github.com/plentymarkets/plugin-payment-invoice/blob/master/LICENSE.md).
