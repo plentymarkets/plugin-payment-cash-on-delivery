@@ -82,7 +82,7 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodService
         $userSession = pluginApp(UserSession::class);
         $contactId = $userSession->getCurrentContactId();
         if($contactId > 0) {
-            $contact = $this->contactRepository->findContactById($this->getContactId());
+            $contact = $this->contactRepository->findContactById($contactId);
         }
 
         /** @var SessionStorageService $sessionService */
