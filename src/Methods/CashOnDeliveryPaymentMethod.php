@@ -8,7 +8,6 @@ use Plenty\Modules\Order\Shipping\Contracts\ParcelServicePresetRepositoryContrac
 use Plenty\Modules\Order\Shipping\ParcelService\Models\ParcelServicePreset;
 use Plenty\Modules\Frontend\Contracts\Checkout;
 use Plenty\Plugin\Application;
-use PrePayment\Services\SessionStorageService;
 use Plenty\Modules\Basket\Contracts\BasketRepositoryContract;
 use IO\Helper\UserSession;
 use Plenty\Modules\Account\Contact\Contracts\ContactRepositoryContract;
@@ -85,8 +84,6 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodService
             $contact = $this->contactRepository->findContactById($contactId);
         }
 
-        /** @var SessionStorageService $sessionService */
-        $sessionService = pluginApp(SessionStorageService::class);
         $params  = [
             'countryId'  => $this->checkout->getShippingCountryId(),
             'webstoreId' => pluginApp(Application::class)->getWebstoreId(),
@@ -94,7 +91,7 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodService
         $list    = $this->parcelServicePresetRepoContract->getLastWeightedPresetCombinations($this->basketRepo->load(), $contact->classId, $params);
         
         foreach($list as $id => $parcelService) {
-            $parcelPreset = $this->parcelServicePresetRepoContract->getPresetById($shippingProfilId);
+            $parcelPreset = $this->parcelServicePresetRepoContract->getPresetById($parcelService['parcelServicePresetId']);
             if($parcelPreset instanceof ParcelServicePreset) {
                 if((bool)$parcelPreset->isCod) {
                     $codAvailable = true;
