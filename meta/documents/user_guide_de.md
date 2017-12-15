@@ -1,3 +1,7 @@
+<div class="alert alert-warning" role="alert">
+   <strong><i>Hinweis:</strong></i> Dieses Plugin setzt Ceres und IO in Version 2.0.3 oder höher voraus.
+</div>
+
 # plentymarkets Payment – Nachnahme
 
 Mit diesem Plugin binden Sie die Zahlungsart **Nachnahme** in Ihren Webshop ein.
@@ -30,7 +34,7 @@ Das Template-Plugin **Ceres** bietet Ihnen die Möglichkeit, Name und Logo Ihrer
 
 ## Zahlungsart auswählen
 
-Nach erfolgreicher Einrichtung wird Nachnahme unter den verfügbaren Versandprofilen angezeigt. Bei Auswahl dieser Option wird Nachnahme automatisch als Zahlungsart ausgewählt und der angegebene Aufpreis angezeigt.
+Wenn mindestens ein aktives und gültiges Versandprofil die Eigenschaft **Nachnahme** enthält, wird die Zahlungsart in der Bestellabwicklung angezeigt, ist aber nicht auswählbar. Nach Auswahl eines Versandprofils mit der Eigenschaft **Nachnahme** wird die Zahlungsart automatisch ausgewählt.
 
 ## Lizenz
  

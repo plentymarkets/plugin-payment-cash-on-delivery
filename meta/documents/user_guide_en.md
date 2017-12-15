@@ -1,3 +1,7 @@
+<div class="alert alert-warning" role="alert">
+   <strong><i>Note:</strong></i> This plugin requires Ceres and IO in version 2.0.3 or above.
+</div>
+
 # plentymarkets Payment&nbsp;– Cash on delivery
 
 With this plugin, you integrate the payment method **Cash on delivery** into your online store.
@@ -30,7 +34,7 @@ The template plugin **Ceres** provides the option to display an individual name 
 
 ## Selecting the payment method
 
-After the successful setup, Cash on delivery will be displayed in the list of available shipping profiles. When selected, Cash on delivery will be activated as payment method and the respective surcharge will be displayed
+If at least one active and valid shipping profile has the option **Cash on delivery**, the payment method is displayed in the checkout, but cannot be selected. After selecting a shipping profile with the option **Cash on delivery**, the payment method is automatically selected.
 
 ## License
 
