@@ -64,15 +64,17 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodService
     public function isActive():bool
     {
         $codAvailable = false;
-        
-        $shippingProfilId = $this->checkout->getShippingProfileId();
-        /** @var ParcelServicePreset */
-        $parcelPreset = $this->parcelServicePresetRepoContract->getPresetById($shippingProfilId);
-        
-        if($parcelPreset instanceof ParcelServicePreset) {
-            if((bool)$parcelPreset->isCod) {
-                $this->checkout->setPaymentMethodId(1);
-                return true;
+
+        if($shippingProfileId = $this->checkout->getShippingProfileId()) {
+            /** @var ParcelServicePreset */
+            $parcelPreset = $this->parcelServicePresetRepoContract->getPresetById($shippingProfileId);
+
+            if ($parcelPreset instanceof ParcelServicePreset) {
+                if ((bool)$parcelPreset->isCod) {
+                    $this->checkout->setPaymentMethodId(1);
+
+                    return true;
+                }
             }
         }
         
