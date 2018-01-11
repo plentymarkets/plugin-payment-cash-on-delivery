@@ -1,5 +1,11 @@
 # Release Notes für Nachnahme
 
+## 1.0.1 (2018-01-11)
+
+### Behoben
+
+- Auswahl der Zahlungsart korrekt selectieren/deselectieren
+
 ## 1.0.0 (2017-12-08)
 
 ### Funktionen
