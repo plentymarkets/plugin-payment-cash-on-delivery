@@ -1,5 +1,10 @@
 # Release Notes for Cash on delivery
 
+## 1.0.2 (2018-01-24)
+
+### Fixed
+- Check whether the shipping profile is valid upon clicking **Order now**.
+
 ## 1.0.1 (2018-01-11)
 
 ### Fixed
