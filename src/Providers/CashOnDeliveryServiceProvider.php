@@ -17,6 +17,7 @@ use Plenty\Modules\Payment\Events\Checkout\GetPaymentMethodContent;
 use Plenty\Modules\Payment\Events\Checkout\ExecutePayment;
 use Plenty\Modules\Order\Shipping\Events\AfterShippingCostCalculated;
 use Plenty\Modules\Payment\Method\Contracts\PaymentMethodContainer;
+use Plenty\Plugin\Translation\Translator;
 
 class CashOnDeliveryServiceProvider extends ServiceProvider
 {
@@ -42,7 +43,8 @@ class CashOnDeliveryServiceProvider extends ServiceProvider
                 if($event->getMop() == $paymentHelper->getMop()) {
 
                     $event->setType('error');
-                    $event->setValue( trans('CashOnDelivery::error.invalidParcelService'));
+                    $translator = pluginApp(Translator::class);
+                    $event->setValue( $translator->trans('CashOnDelivery::error.invalidParcelService'));
 
                     /** @var Checkout $checkoutService */
                     $checkoutService = pluginApp(Checkout::class);
