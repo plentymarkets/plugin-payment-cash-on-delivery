@@ -5,6 +5,9 @@ namespace CashOnDelivery\Providers;
 use CashOnDelivery\Methods\CashOnDeliveryPaymentMethod;
 use CashOnDelivery\Helper\CashOnDeliveryHelper;
 
+use Plenty\Modules\Frontend\Contracts\Checkout;
+use Plenty\Modules\Order\Shipping\Contracts\ParcelServicePresetRepositoryContract;
+use Plenty\Modules\Order\Shipping\ParcelService\Models\ParcelServicePreset;
 use Plenty\Plugin\ServiceProvider;
 use Plenty\Plugin\Events\Dispatcher;
 use Plenty\Modules\Basket\Events\Basket\AfterBasketChanged;
@@ -35,12 +38,25 @@ class CashOnDeliveryServiceProvider extends ServiceProvider
 
         // Listen for the event that gets the payment method content
         $eventDispatcher->listen(GetPaymentMethodContent::class,
-            function(GetPaymentMethodContent $event) use( $paymentHelper)
-            {
-                if($event->getMop() == $paymentHelper->getMop())
-                {
-                    $event->setValue('');
-                    $event->setType('continue');
+            function(GetPaymentMethodContent $event) use( $paymentHelper) {
+                if($event->getMop() == $paymentHelper->getMop()) {
+
+                    $event->setType('error');
+                    $event->setValue( trans('CashOnDelivery::error.invalidParcelService'));
+
+                    /** @var Checkout $checkoutService */
+                    $checkoutService = pluginApp(Checkout::class);
+                    if($shippingProfileId = $checkoutService->getShippingProfileId()) {
+                        $parcelServicePresetRepoContract = pluginApp(ParcelServicePresetRepositoryContract::class);
+
+                        $parcelPreset = $parcelServicePresetRepoContract ->getPresetById($shippingProfileId);
+                        if ($parcelPreset instanceof ParcelServicePreset) {
+                            if ((bool)$parcelPreset->isCod) {
+                                $event->setValue('');
+                                $event->setType('continue');
+                            }
+                        }
+                    }
                 }
             });
 
