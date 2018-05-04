@@ -3,7 +3,7 @@
 ## 1.0.3 (2018-05-04)
 
 ### Fixed
-- bugfixes and optimizations
+- Fixed a bug that might interfere with the order process
 
 ## 1.0.2 (2018-01-24)
 
@@ -14,7 +14,7 @@
 
 ### Fixed
 
-- Select/Deselect payment method works properly again 
+- Select/Deselect payment method works properly again
 
 ## 1.0.0 (2017-12-08)
 
