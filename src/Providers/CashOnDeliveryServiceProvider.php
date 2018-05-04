@@ -42,7 +42,7 @@ class CashOnDeliveryServiceProvider extends ServiceProvider
             function(GetPaymentMethodContent $event) use( $paymentHelper) {
                 if($event->getMop() == $paymentHelper->getMop()) {
 
-                    $event->setType('error');
+                    $event->setType('errorCode');
                     $translator = pluginApp(Translator::class);
                     $event->setValue( $translator->trans('CashOnDelivery::error.invalidParcelService'));
 
@@ -68,7 +68,7 @@ class CashOnDeliveryServiceProvider extends ServiceProvider
                 {
                     if($event->getMop() == $paymentHelper->getMop())
                     {
-                        $event->setValue('<h1>Rechungskauf<h1>');
+                        $event->setValue('<h1>Nachnahme<h1>');
                         $event->setType('htmlContent');
                     }
                 });

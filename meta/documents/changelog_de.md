@@ -1,5 +1,10 @@
 # Release Notes für Nachnahme
 
+## 1.0.3 (2018-05-04)
+
+### Behoben
+- Ein Fehler der den Bestellprozess behindern kann wurde behoben.
+
 ## 1.0.2 (2018-01-24)
 
 ### Behoben
