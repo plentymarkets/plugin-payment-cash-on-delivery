@@ -1,16 +1,26 @@
-[
-  {
-    "tab": "Settings",
-    "key": "name",
-    "label": "Name",
-    "type": "text",
-    "default": "Nachnahme"
-  },
-  {
-    "tab": "Settings",
-    "key": "logo",
-    "label": "Logo URL",
-    "type": "text",
-    "default": ""
+{
+  "formatVersion": 1,
+  "menu": {
+    "Config.SettingsTab": {
+      "label": "Config.SettingsTab",
+      "formFields": {
+        "name": {
+          "type": "inputText",
+          "required": false,
+          "label": "Config.nameLabel",
+          "options": {
+            "defaultValue": "Nachnahme"
+          }
+        },
+        "logo": {
+          "type": "inputText",
+          "required": false,
+          "label": "Config.logoLabel",
+          "options": {
+            "defaultValue": ""
+          }
+        }
+      }
+    }
   }
-]
+}
