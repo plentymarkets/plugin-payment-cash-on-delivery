@@ -44,7 +44,7 @@ class CashOnDeliveryServiceProvider extends ServiceProvider
 
                     $event->setType('errorCode');
                     $translator = pluginApp(Translator::class);
-                    $event->setValue( $translator->trans('CashOnDelivery::error.invalidParcelService'));
+                    $event->setValue( $translator->trans('CashOnDelivery::error.errorInvalidParcelService'));
 
                     /** @var Checkout $checkoutService */
                     $checkoutService = pluginApp(Checkout::class);

@@ -1,5 +1,11 @@
 # Release Notes für Nachnahme
 
+## 1.0.4 (2018-08-08)
+
+### Hinzugefügt
+- Fehlende Übersetzungen für den Zahlungsartennamen wurden hinzugefügt.
+- Sprachabhängige Texte können nun über das Mehrsprachigkeits-Interface angepasst werden.
+
 ## 1.0.3 (2018-05-04)
 
 ### Behoben

@@ -1,0 +1,14 @@
+{
+  "sections":
+  [
+    {
+      "name": "MultilingualismConfig.errorMessages",
+      "prefix": "error"
+    }
+  ],
+  "ignoredTranslationFiles":
+  [
+    "MultilingualismConfig.properties",
+    "PaymentMethod.properties"
+  ]
+}

@@ -1,5 +1,11 @@
 # Release Notes for Cash on delivery
 
+## 1.0.4 (2018-08-08)
+
+### Hinzugefügt
+- Missing translations for the payment method name have been added.
+- Language-dependent texts can now be edited via the multilingualism interface.
+
 ## 1.0.3 (2018-05-04)
 
 ### Fixed

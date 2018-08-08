@@ -114,11 +114,16 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodService
 
     public function getName($lang='de')
     {
+        $trans = pluginApp(\Plenty\Plugin\Translation\Translator::class);
+        $paymentMethodName = $trans->trans('CashOnDelivery::PaymentMethod.name');
+        if(strlen($paymentMethodName)){
+            return $paymentMethodName;
+        }
         $name = $this->config->get('CashOnDelivery.name');
         if(strlen($name) > 0) {
             return $name;
         } 
-        return 'Cash on Delivery';
+        return 'cash on delivery';
     }
 
     public function getIcon()
