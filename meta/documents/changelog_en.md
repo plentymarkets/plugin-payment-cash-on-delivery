@@ -3,7 +3,7 @@
 ## 1.0.5 (2018-10-11)
 
 ### Fixed
-- The dependency of IO was removed.
+- The dependency of IO has been removed.
 
 ## 1.0.4 (2018-08-08)
 
