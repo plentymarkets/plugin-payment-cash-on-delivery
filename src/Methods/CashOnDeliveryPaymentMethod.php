@@ -2,6 +2,7 @@
 
 namespace CashOnDelivery\Methods;
 
+use Plenty\Modules\Frontend\Services\AccountService;
 use Plenty\Modules\Payment\Method\Contracts\PaymentMethodService;
 use Plenty\Plugin\ConfigRepository;
 use Plenty\Modules\Order\Shipping\Contracts\ParcelServicePresetRepositoryContract;
@@ -10,7 +11,6 @@ use Plenty\Modules\Frontend\Contracts\Checkout;
 use Plenty\Plugin\Application;
 use Plenty\Modules\Basket\Contracts\BasketRepositoryContract;
 use Plenty\Modules\Account\Contact\Contracts\ContactRepositoryContract;
-use Plenty\Modules\Account\Contact\Models\Contact;
 
 /**
  * Class CashOnDeliveryPaymentMethod
@@ -80,7 +80,9 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodService
         
         $contact = null;
 
-        $contactId = $this->getActiveContactId();
+        /** @var AccountService $accountService */
+        $accountService = pluginApp(AccountService::class);
+        $contactId = $accountService->getAccountContactId();
         if($contactId > 0) {
             $contact = $this->contactRepository->findContactById($contactId);
         }
@@ -144,16 +146,5 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodService
     public function isSwitchableTo()
     {
         return false;
-    }
-
-    /**
-     * @return int
-     */
-    private function getActiveContactId(){
-        $authorizedUser = \Auth::guard('my_account')->user();
-        if($authorizedUser instanceof Contact && $authorizedUser->id && !$authorizedUser->blocked){
-            return $authorizedUser->id;
-        }
-        return 0;
     }
 }
