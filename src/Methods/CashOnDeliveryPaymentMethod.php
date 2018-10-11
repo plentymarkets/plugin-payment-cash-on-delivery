@@ -2,6 +2,7 @@
 
 namespace CashOnDelivery\Methods;
 
+use Plenty\Modules\Frontend\Services\AccountService;
 use Plenty\Modules\Payment\Method\Contracts\PaymentMethodService;
 use Plenty\Plugin\ConfigRepository;
 use Plenty\Modules\Order\Shipping\Contracts\ParcelServicePresetRepositoryContract;
@@ -9,7 +10,6 @@ use Plenty\Modules\Order\Shipping\ParcelService\Models\ParcelServicePreset;
 use Plenty\Modules\Frontend\Contracts\Checkout;
 use Plenty\Plugin\Application;
 use Plenty\Modules\Basket\Contracts\BasketRepositoryContract;
-use IO\Helper\UserSession;
 use Plenty\Modules\Account\Contact\Contracts\ContactRepositoryContract;
 
 /**
@@ -79,9 +79,10 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodService
         }
         
         $contact = null;
-        /** @var UserSession */
-        $userSession = pluginApp(UserSession::class);
-        $contactId = $userSession->getCurrentContactId();
+
+        /** @var AccountService $accountService */
+        $accountService = pluginApp(AccountService::class);
+        $contactId = $accountService->getAccountContactId();
         if($contactId > 0) {
             $contact = $this->contactRepository->findContactById($contactId);
         }
