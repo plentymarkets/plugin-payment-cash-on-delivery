@@ -1,5 +1,10 @@
 # Release Notes für Nachnahme
 
+## 1.0.5 (2018-10-11)
+
+### Behoben
+- Die Abhängigkeit von IO wurde beseitigt.
+
 ## 1.0.4 (2018-08-08)
 
 ### Hinzugefügt

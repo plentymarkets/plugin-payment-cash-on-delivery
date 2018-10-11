@@ -9,8 +9,8 @@ use Plenty\Modules\Order\Shipping\ParcelService\Models\ParcelServicePreset;
 use Plenty\Modules\Frontend\Contracts\Checkout;
 use Plenty\Plugin\Application;
 use Plenty\Modules\Basket\Contracts\BasketRepositoryContract;
-use IO\Helper\UserSession;
 use Plenty\Modules\Account\Contact\Contracts\ContactRepositoryContract;
+use Plenty\Modules\Account\Contact\Models\Contact;
 
 /**
  * Class CashOnDeliveryPaymentMethod
@@ -79,9 +79,8 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodService
         }
         
         $contact = null;
-        /** @var UserSession */
-        $userSession = pluginApp(UserSession::class);
-        $contactId = $userSession->getCurrentContactId();
+
+        $contactId = $this->getActiveContactId();
         if($contactId > 0) {
             $contact = $this->contactRepository->findContactById($contactId);
         }
@@ -145,5 +144,16 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodService
     public function isSwitchableTo()
     {
         return false;
+    }
+
+    /**
+     * @return int
+     */
+    private function getActiveContactId(){
+        $authorizedUser = \Auth::guard('my_account')->user();
+        if($authorizedUser instanceof Contact && $authorizedUser->id && !$authorizedUser->blocked){
+            return $authorizedUser->id;
+        }
+        return 0;
     }
 }
