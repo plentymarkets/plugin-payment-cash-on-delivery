@@ -8,15 +8,20 @@ With this plugin, you integrate the payment method **Cash on delivery** into you
 
 ## Setting up a payment method
 
-In order to make this payment method available in your online store, you have to carry out the settings in the plentymarkets back end.
+To make the payment method available in your online store, you have to carry out settings in the back end of your plentymarkets system.
+
+First of all, activate the payment method once in the **System » System Settings » Orders » Payment » Methods** menu. More information on carrying out this setting is available on the <strong><a href="https://knowledge.plentymarkets.com/en/payment/managing-payment-methods#20" target="_blank">Managing payment methods</a></strong> page of the manual.
+
+In addition, make sure that the payment method is included among the Permitted payment methods in the <strong><a href="https://knowledge.plentymarkets.com/en/crm/managing-contacts#15" target="_blank">customer classes</a></strong> and that it is not listed among the Blocked payment methods in the <strong><a href="https://knowledge.plentymarkets.com/en/order-processing/fulfilment/preparing-the-shipment#1000" target="_blank">shipping profiles</a></strong>.
+
 
 ##### Setting up a payment method:
 
-1. Go to **System&nbsp;» Orders&nbsp;» Shipping » Options**.
+1. Go to **System&nbsp;» System settings » Orders&nbsp;» Shipping » Options**.
 2. Go to the tab **Shipping profiles**.
 3. Activate the option **Cash on delivery**.
 4. Go to the tab **Table of shipping charges**.
-5. Carry out the settings. Pay attention to the information on <a href="https://knowledge.plentymarkets.com/en/order-processing/fulfilment/preparing-the-shipment#1500"><strong>Shipping profiles</strong></a>.
+5. Carry out the settings. Pay attention to the information on <a href="https://knowledge.plentymarkets.com/en/fulfilment/preparing-the-shipment#1500"><strong>Shipping profiles</strong></a>.
 5. **Save** the settings.
 
 ## Displaying the payment method in the online store
