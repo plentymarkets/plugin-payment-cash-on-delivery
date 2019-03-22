@@ -1,5 +1,10 @@
 # Release Notes für Nachnahme
 
+## 1.0.6 (2019-03-22)
+
+### Geändert
+- Aktualisierung des User Guides.
+
 ## 1.0.5 (2018-10-11)
 
 ### Behoben
@@ -24,12 +29,10 @@
 ## 1.0.1 (2018-01-11)
 
 ### Behoben
-
-- Auswahl der Zahlungsart korrekt selectieren/deselectieren
+- Auswahl der Zahlungsart korrekt selektieren/deselektieren
 
 ## 1.0.0 (2017-12-08)
 
 ### Funktionen
-
 - Zahlungsart **Nachnahme** für plentymarkets Webshops.
 - Nur in Verbindung mit entsprechendem Versandprofil nutzbar.
