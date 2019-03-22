@@ -1,5 +1,10 @@
 # Release Notes for Cash on delivery
 
+## 1.0.6 (2019-03-22)
+
+### Changed
+- The user guide has been updated.
+
 ## 1.0.5 (2018-10-11)
 
 ### Fixed
@@ -24,12 +29,10 @@
 ## 1.0.1 (2018-01-11)
 
 ### Fixed
-
-- Select/Deselect payment method works properly again
+- Selecting/Deselecting payment method works properly again
 
 ## 1.0.0 (2017-12-08)
 
 ### Features
-
 - Payment method **Cash on delivery** for plentymarkets online stores.
 - Only available with compatible shipping profiles.
