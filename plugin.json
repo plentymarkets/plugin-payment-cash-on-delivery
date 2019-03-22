@@ -8,7 +8,7 @@
   "description": "cash on delivery plugin for plentymarkets",
   "shortDescription"  : {"de": "Zahlungsart Nachnahme für plentymarkets Webshops","en": "Payment method cash on delivery for plentymarkets online stores"},
   "categories"        : ["3519"],
-  "author"            : "plentymarkets AG",
+  "author"            : "plentysystems AG",
   "authorIcon"        : "icon_author_xs.png",
   "email"             : "sales@plentymarkets.com",
   "phone"             : "+49 561 98 681 100",
