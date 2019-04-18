@@ -1,5 +1,10 @@
 # Release Notes for Cash on delivery
 
+## 1.0.7 (2019-04-18)
+
+### Changed
+- After the order has been created, the method of payment can no longer be changed.
+
 ## 1.0.6 (2019-03-22)
 
 ### Changed

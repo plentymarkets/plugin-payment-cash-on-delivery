@@ -1,5 +1,5 @@
 {
-  "version": "1.0.6",
+  "version": "1.0.7",
   "name": "CashOnDelivery",
   "marketplaceName"   : {"de":"Nachnahme","en":"Cash on delivery"},
   "license"           : "AGPL-3.0",

@@ -1,5 +1,10 @@
 # Release Notes für Nachnahme
 
+## 1.0.7 (2019-04-18)
+
+### Geändert
+- Nach der Auftragsanlage kann die Zahlungsart nun nicht mehr gewechselt werden.
+
 ## 1.0.6 (2019-03-22)
 
 ### Geändert
