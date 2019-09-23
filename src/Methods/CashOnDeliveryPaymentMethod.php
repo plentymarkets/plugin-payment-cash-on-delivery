@@ -64,20 +64,6 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodService
     public function isActive():bool
     {
         $codAvailable = false;
-
-        if($shippingProfileId = $this->checkout->getShippingProfileId()) {
-            /** @var ParcelServicePreset */
-            $parcelPreset = $this->parcelServicePresetRepoContract->getPresetById($shippingProfileId);
-
-            if ($parcelPreset instanceof ParcelServicePreset) {
-                if ((bool)$parcelPreset->isCod) {
-                    $this->checkout->setPaymentMethodId(1);
-
-                    return true;
-                }
-            }
-        }
-        
         $contact = null;
 
         /** @var AccountService $accountService */
@@ -86,13 +72,15 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodService
         if($contactId > 0) {
             $contact = $this->contactRepository->findContactById($contactId);
         }
-
+        $application = pluginApp(Application::class);
         $params  = [
             'countryId'  => $this->checkout->getShippingCountryId(),
-            'webstoreId' => pluginApp(Application::class)->getWebstoreId(),
+            'webstoreId' => $application->getWebstoreId(),
+            'skipCheckForMethodOfPaymentId' => true
         ];
+
         $list    = $this->parcelServicePresetRepoContract->getLastWeightedPresetCombinations($this->basketRepo->load(), $contact->classId, $params);
-        
+
         foreach($list as $id => $parcelService) {
             $parcelPreset = $this->parcelServicePresetRepoContract->getPresetById($parcelService['parcelServicePresetId']);
             if($parcelPreset instanceof ParcelServicePreset) {
@@ -110,7 +98,7 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodService
      */
     public function isSelectable()
     {
-        return false;
+        return true;
     }
 
     public function getName($lang='de')
