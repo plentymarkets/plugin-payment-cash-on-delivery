@@ -3,10 +3,10 @@
 ## 1.0.8 (2019-09-24)
 
 ### Changed
-- Adjustments for the change in version 4.2.2 of the Ceres plugin for permanent display of all shipping profiles and payment methods in the checkout. Cash on delivery is now always selectable.
+- Cash on delivery can now always be selected. This adjustment corresponds to the permanent display of all shipping profiles and payment methods in the checkout of the ceres plugin starting with version 4.3.
 
 ### TODO
-- As in Callisto, all payment methods except cash on delivery should be blocked for C.O.D. shipping profiles.
+- All payment methods except cash on delivery should be blocked for C.O.D. shipping profiles. This means the settings need to be as they were for Callisto.
 
 ## 1.0.7 (2019-04-18)
 

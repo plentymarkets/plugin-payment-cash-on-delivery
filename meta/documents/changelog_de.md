@@ -3,7 +3,7 @@
 ## 1.0.8 (2019-09-24)
 
 ### Geändert
-- Anpassungen für die Änderung in Version 4.2.2 des Ceres Plugins zur permanenten Anzeige aller Versandprofile und Zahlungsmethoden im Checkout. Nachnahme ist nun immer auswählbar.
+- Nachnahme ist nun immer auswählbar. Passend zur permanenten Anzeige aller Versandprofile und Zahlungsarten im Checkout des Ceres Plugins ab Version 4.3.
 
 ### TODO
 - Für die Nachnahmeversandprofile sollten, wie in Callisto, bis auf Nachnahme alle Zahlungsarten gesperrt werden.
