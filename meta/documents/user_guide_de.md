@@ -4,42 +4,43 @@
 
 # plentymarkets Payment – Nachnahme
 
-Mit diesem Plugin binden Sie die Zahlungsart **Nachnahme** in Ihren Webshop ein.
+Mit diesem Plugin bindest Du die Zahlungsart **Nachnahme** in deinen Webshop ein.
 
 ## Zahlungsart einrichten
 
-Bevor die Zahlungsart in Ihrem Webshop verfügbar ist, müssen Sie zuerst einige Einstellungen in Ihrem plentymarkets Backend vornehmen.
+Bevor die Zahlungsart in deinem Webshop verfügbar ist, musst du zuerst einige Einstellungen in deinem plentymarkets Backend vornehmen.
 
-Zuerst aktivieren Sie die Zahlungsart einmalig im Menü **System » Systemeinstellungen » Aufträge » Zahlung » Zahlungsarten**. Weitere Informationen dazu finden Sie auf der Handbuchseite <strong><a href="https://knowledge.plentymarkets.com/payment/zahlungsarten-verwalten#20" target="_blank">Zahlungsarten verwalten</a></strong>.
+Zuerst aktivierst du die Zahlungsart einmalig im Menü **System » Systemeinstellungen » Aufträge » Zahlung » Zahlungsarten**. Weitere Informationen dazu findest du auf der Handbuchseite <strong><a href="https://knowledge.plentymarkets.com/payment/zahlungsarten-verwalten#20" target="_blank">Zahlungsarten verwalten</a></strong>.
 
-Stellen Sie zudem sicher, dass die Zahlungsart unter dem Punkt **Erlaubte Zahlungsarten** in den <strong><a href="https://knowledge.plentymarkets.com/crm/kontakte-verwalten#15" target="_blank">Kundenklassen</a></strong> vorhanden ist und nicht im Bereich **Gesperrte Zahlungsarten** in den <strong><a href="https://knowledge.plentymarkets.com/auftragsabwicklung/fulfillment/versand-vorbereiten#1000" target="_blank">Versandprofilen</a></strong> aufgeführt ist.
+Stelle zudem sicher, dass die Zahlungsart unter dem Punkt **Erlaubte Zahlungsarten** in den <strong><a href="https://knowledge.plentymarkets.com/crm/kontakte-verwalten#15" target="_blank">Kundenklassen</a></strong> vorhanden ist und nicht im Bereich **Gesperrte Zahlungsarten** in den <strong><a href="https://knowledge.plentymarkets.com/auftragsabwicklung/fulfillment/versand-vorbereiten#1000" target="_blank">Versandprofilen</a></strong> aufgeführt ist.
 
 ##### Zahlungsart einrichten:
 
-1. Öffnen Sie das Menü **System&nbsp;» Systemeinstellungen » Aufträge&nbsp;» Versand » Optionen**.
-2. Wechseln Sie in das Tab **Versandprofile**.
-3. Setzen Sie einen Haken bei **Nachnahme**.
-4. Wechseln Sie in das Tab **Portotabelle**.
-5. Nehmen Sie die Einstellungen vor. Beachten Sie die Informationen zu <a href="https://knowledge.plentymarkets.com/fulfillment/versand-vorbereiten#1500"><strong>Versandprofilen</strong></a>.
-5. **Speichern** Sie die Einstellungen.
+1. Öffne das Menü **Einrichtung » Aufträge&nbsp;» Versand » Optionen**.
+2. Wechsele in das Tab **Versandprofile**.
+3. Setze einen Haken bei **Nachnahme**.
+4. Sperre im Abschnitt **Gesperrte Zahlungsarten** alle Zahlungsarten mit Ausnahme von **Nachnahme**.
+5. Wechsele in das Tab **Portotabelle**.
+6. Nimm die Einstellungen vor. Beachte die Informationen zu <a href="https://knowledge.plentymarkets.com/fulfillment/versand-vorbereiten#1500"><strong>Versandprofilen</strong></a>.
+7. **Speichere** die Einstellungen.
 
 ## Details der Zahlungsart im Webshop anzeigen
 
-Das Template-Plugin **Ceres** bietet Ihnen die Möglichkeit, Name und Logo Ihrer Zahlungsart im Bestellvorgang individuell anzeigen können. Gehen Sie wie im Folgenden beschrieben vor, um Name und Logo der Zahlungsart anzuzeigen.
+Das Template-Plugin **Ceres** bietet dir die Möglichkeit, Name und Logo deiner Zahlungsart im Bestellvorgang individuell anzuzeigen. Gehe wie im Folgenden beschrieben vor, um Name und Logo der Zahlungsart anzuzeigen.
 
 ##### Details zur Zahlungsart einrichten:
 
-1. Gehen Sie zu **Plugins » Plugin-Übersicht**.
-2. Klicken Sie auf das Plugin **Nachnahme**.
-3. Klicken Sie auf **Konfiguration**.
-4. Geben Sie unter **Name** den Namen ein, der für die Zahlungsart angezeigt werden soll.
-5. Geben sie unter **Logo-URL** eine https-URL ein, die zum Logo-Bild führt. Gültige Dateiformate sind .gif, .jpg oder .png. Die Maximalgröße beträgt 190 Pixel in der Breite und 60 Pixel in der Höhe.
-5. **Speichern** Sie die Einstellungen.<br />→ Name und Logo der Zahlungsart werden im Bestellvorgang des Webshops angezeigt.
+1. Gehe zu **Plugins » Plugin-Übersicht**.
+2. Klicke auf das Plugin **Nachnahme**.
+3. Klicke auf **Konfiguration**.
+4. Gib unter **Name** den Namen ein, der für die Zahlungsart angezeigt werden soll.
+5. Gib unter **Logo-URL** eine https-URL ein, die zum Logo-Bild führt. Gültige Dateiformate sind .gif, .jpg oder .png. Die Maximalgröße beträgt 190 Pixel in der Breite und 60 Pixel in der Höhe.
+6. **Speichere** die Einstellungen.<br />→ Name und Logo der Zahlungsart werden im Bestellvorgang des Webshops angezeigt.
 
 ## Zahlungsart auswählen
 
-Wenn mindestens ein aktives und gültiges Versandprofil die Eigenschaft **Nachnahme** enthält, wird die Zahlungsart in der Bestellabwicklung angezeigt, ist aber nicht auswählbar. Nach Auswahl eines Versandprofils mit der Eigenschaft **Nachnahme** wird die Zahlungsart automatisch ausgewählt.
+Wenn mindestens ein aktives und gültiges Versandprofil die Eigenschaft **Nachnahme** enthält, wird die Zahlungsart in der Bestellabwicklung angezeigt und ist auswählbar. Nach Auswahl eines Versandprofils mit der Eigenschaft **Nachnahme** wird die Zahlungsart automatisch ausgewählt.
 
 ## Lizenz
 
-Das gesamte Projekt unterliegt der GNU AFFERO GENERAL PUBLIC LICENSE – weitere Informationen finden Sie in der [LICENSE.md](https://github.com/plentymarkets/plugin-payment-invoice/blob/master/LICENSE.md).
+Das gesamte Projekt unterliegt der GNU AFFERO GENERAL PUBLIC LICENSE – weitere Informationen findest du in der [LICENSE.md](https://github.com/plentymarkets/plugin-payment-invoice/blob/master/LICENSE.md).

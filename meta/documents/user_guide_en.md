@@ -17,12 +17,13 @@ In addition, make sure that the payment method is included among the Permitted p
 
 ##### Setting up a payment method:
 
-1. Go to **System&nbsp;» System settings » Orders&nbsp;» Shipping » Options**.
+1. Go to **Setup » Orders&nbsp;» Shipping » Options**.
 2. Go to the tab **Shipping profiles**.
 3. Activate the option **Cash on delivery**.
-4. Go to the tab **Table of shipping charges**.
-5. Carry out the settings. Pay attention to the information on <a href="https://knowledge.plentymarkets.com/en/fulfilment/preparing-the-shipment#1500"><strong>Shipping profiles</strong></a>.
-5. **Save** the settings.
+4. Block all payment methods except **Cash on delivery** in the corresponding section called **Blocked payment methods**.
+5. Go to the tab **Table of shipping charges**.
+6. Carry out the settings. Pay attention to the information on <a href="https://knowledge.plentymarkets.com/en/fulfilment/preparing-the-shipment#1500"><strong>Shipping profiles</strong></a>.
+7. **Save** the settings.
 
 ## Displaying the payment method in the online store
 
@@ -35,11 +36,11 @@ The template plugin **Ceres** provides the option to display an individual name 
 3. Click on **Configuration**.
 4. Under **Name**, enter the name to be displayed for the payment method.
 5. Under **Logo URL**, enter an https URL that leads to the logo. Valid file formats are .gif, .jpg or .png. The image may not exceed a maximum size of 190 pixels in width and 60 pixels in height.
-5. **Save** the settings.<br />→ Name and logo for the payment method are displayed in the checkout.
+6. **Save** the settings.<br />→ Name and logo for the payment method are displayed in the checkout.
 
 ## Selecting the payment method
 
-If at least one active and valid shipping profile has the option **Cash on delivery**, the payment method is displayed in the checkout, but cannot be selected. After selecting a shipping profile with the option **Cash on delivery**, the payment method is automatically selected.
+If at least one active and valid shipping profile has the option **Cash on delivery**, the payment method is displayed in the checkout and can be selected. After selecting a shipping profile with the option **Cash on delivery**, the payment method is automatically selected.
 
 ## License
 
