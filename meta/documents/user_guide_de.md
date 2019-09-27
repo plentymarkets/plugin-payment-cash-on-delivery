@@ -10,7 +10,7 @@ Mit diesem Plugin bindest Du die Zahlungsart **Nachnahme** in deinen Webshop ein
 
 Bevor die Zahlungsart in deinem Webshop verfügbar ist, musst du zuerst einige Einstellungen in deinem plentymarkets Backend vornehmen.
 
-Zuerst aktivierst du die Zahlungsart einmalig im Menü **System » Systemeinstellungen » Aufträge » Zahlung » Zahlungsarten**. Weitere Informationen dazu findest du auf der Handbuchseite <strong><a href="https://knowledge.plentymarkets.com/payment/zahlungsarten-verwalten#20" target="_blank">Zahlungsarten verwalten</a></strong>.
+Zuerst aktivierst du die Zahlungsart einmalig im Menü **Einrichtung » Aufträge » Zahlung » Zahlungsarten**. Weitere Informationen dazu findest du auf der Handbuchseite <strong><a href="https://knowledge.plentymarkets.com/payment/zahlungsarten-verwalten#20" target="_blank">Zahlungsarten verwalten</a></strong>.
 
 Stelle zudem sicher, dass die Zahlungsart unter dem Punkt **Erlaubte Zahlungsarten** in den <strong><a href="https://knowledge.plentymarkets.com/crm/kontakte-verwalten#15" target="_blank">Kundenklassen</a></strong> vorhanden ist und nicht im Bereich **Gesperrte Zahlungsarten** in den <strong><a href="https://knowledge.plentymarkets.com/auftragsabwicklung/fulfillment/versand-vorbereiten#1000" target="_blank">Versandprofilen</a></strong> aufgeführt ist.
 
