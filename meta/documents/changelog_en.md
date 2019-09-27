@@ -1,6 +1,6 @@
 # Release Notes for Cash on delivery
 
-## 1.0.8 (2019-09-24)
+## 1.1.0 (2019-09-27)
 
 ### Changed
 - Cash on delivery can now always be selected. This adjustment corresponds to the permanent display of all shipping profiles and payment methods in the checkout of the ceres plugin starting with version 4.3.

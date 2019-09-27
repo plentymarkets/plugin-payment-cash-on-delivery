@@ -1,6 +1,6 @@
 # Release Notes für Nachnahme
 
-## 1.0.8 (2019-09-24)
+## 1.1.0 (2019-09-27)
 
 ### Geändert
 - Nachnahme ist nun immer auswählbar. Passend zur permanenten Anzeige aller Versandprofile und Zahlungsarten im Checkout des Ceres Plugins ab Version 4.3.
