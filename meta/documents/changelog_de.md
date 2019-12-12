@@ -1,5 +1,9 @@
 # Release Notes für Nachnahme
 
+## X.X.X (2019-12-12)
+### Geändert
+- Funktionalitäten hinzugefügt für Backend-Sichtbarkeiten
+
 ## 1.1.0 (2019-09-27)
 
 ### Geändert

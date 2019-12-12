@@ -135,4 +135,24 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodService
     {
         return false;
     }
+
+    /**
+     * Check if this payment method should be searchable in the backend
+     *
+     * @return bool
+     */
+    public function isBackendSearchable():bool
+    {
+        return true;
+    }
+
+    /**
+     * Check if this payment method should be active in the backend
+     *
+     * @return bool
+     */
+    public function isBackendActive():bool
+    {
+        return true;
+    }
 }

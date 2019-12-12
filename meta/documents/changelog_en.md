@@ -1,5 +1,9 @@
 # Release Notes for Cash on delivery
 
+## X.X.X (2019-12-12)
+### Changed
+- Added methods for the backend visibility
+
 ## 1.1.0 (2019-09-27)
 
 ### Changed
