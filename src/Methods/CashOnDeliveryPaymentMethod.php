@@ -11,6 +11,7 @@ use Plenty\Modules\Frontend\Contracts\Checkout;
 use Plenty\Plugin\Application;
 use Plenty\Modules\Basket\Contracts\BasketRepositoryContract;
 use Plenty\Modules\Account\Contact\Contracts\ContactRepositoryContract;
+use Plenty\Plugin\Translation\Translator;
 
 /**
  * Class CashOnDeliveryPaymentMethod
@@ -43,18 +44,23 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodService
      */
     protected $contactRepository;
 
+    /** @var Translator */
+    protected $translator;
+
     public function __construct(
         ConfigRepository $config,
         Checkout $checkout, 
         ParcelServicePresetRepositoryContract $parcelServicePresetRepoContract,
         BasketRepositoryContract $basketRepo,
-        ContactRepositoryContract $contactRepository)
+        ContactRepositoryContract $contactRepository,
+        Translator $translator)
     {
         $this->config = $config;
         $this->checkout = $checkout;
         $this->parcelServicePresetRepoContract = $parcelServicePresetRepoContract;
         $this->basketRepo = $basketRepo;
         $this->contactRepository = $contactRepository;
+        $this->translator = $translator;
     }
 
     /**
@@ -103,16 +109,7 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodService
 
     public function getName($lang='de')
     {
-        $trans = pluginApp(\Plenty\Plugin\Translation\Translator::class);
-        $paymentMethodName = $trans->trans('CashOnDelivery::PaymentMethod.name');
-        if(strlen($paymentMethodName)){
-            return $paymentMethodName;
-        }
-        $name = $this->config->get('CashOnDelivery.name');
-        if(strlen($name) > 0) {
-            return $name;
-        } 
-        return 'cash on delivery';
+        return $this->translator->trans('CashOnDelivery::PaymentMethod.name',[],$lang);
     }
 
     public function getIcon()
@@ -154,5 +151,16 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodService
     public function isBackendActive():bool
     {
         return true;
+    }
+
+    /**
+     * Get the name for the backend
+     *
+     * @param $lang
+     * @return string
+     */
+    public function getBackendName($lang):string
+    {
+        return $this->getName($lang);
     }
 }
