@@ -2,8 +2,10 @@
 
 namespace CashOnDelivery\Methods;
 
+use Plenty\Modules\Basket\Models\Basket;
 use Plenty\Modules\Frontend\Services\AccountService;
 use Plenty\Modules\Payment\Method\Contracts\PaymentMethodService;
+use Plenty\Modules\System\Contracts\WebstoreConfigurationRepositoryContract;
 use Plenty\Plugin\ConfigRepository;
 use Plenty\Modules\Order\Shipping\Contracts\ParcelServicePresetRepositoryContract;
 use Plenty\Modules\Order\Shipping\ParcelService\Models\ParcelServicePreset;
@@ -71,13 +73,20 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodService
     {
         $codAvailable = false;
         $contact = null;
+        $contactClassId = 0;
 
-        /** @var AccountService $accountService */
+        /** @var Basket $basket */
+        $basket = $this->basketRepo->load();
+
         $accountService = pluginApp(AccountService::class);
-        $contactId = $accountService->getAccountContactId();
-        if($contactId > 0) {
-            $contact = $this->contactRepository->findContactById($contactId);
+        $isGuest = !($accountService->getIsAccountLoggedIn() && $basket->customerId > 0);
+        $contact = null;
+        if(!$isGuest) {
+            try {
+                $contact = $this->contactRepository->findContactById($basket->customerId);
+            } catch(\Exception $ex) {}
         }
+
         $application = pluginApp(Application::class);
         $params  = [
             'countryId'  => $this->checkout->getShippingCountryId(),
@@ -85,7 +94,19 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodService
             'skipCheckForMethodOfPaymentId' => true
         ];
 
-        $list    = $this->parcelServicePresetRepoContract->getLastWeightedPresetCombinations($this->basketRepo->load(), $contact->classId, $params);
+        if($contact !== null)
+        {
+            $contactClassId = $contact->classId;
+        }
+        else
+        {
+            /** @var WebstoreConfigurationRepositoryContract $webstoreConfigRepo */
+            $webstoreConfigRepo = pluginApp(WebstoreConfigurationRepositoryContract::class);
+            $webstoreConfig     = $webstoreConfigRepo->findByWebstoreId($application->getWebstoreId());
+            $contactClassId = $webstoreConfig->defaultCustomerClassId ?? 0;
+        }
+
+        $list    = $this->parcelServicePresetRepoContract->getLastWeightedPresetCombinations($this->basketRepo->load(), $contactClassId, $params);
 
         foreach($list as $id => $parcelService) {
             $parcelPreset = $this->parcelServicePresetRepoContract->getPresetById($parcelService['parcelServicePresetId']);
