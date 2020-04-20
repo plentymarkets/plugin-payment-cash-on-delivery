@@ -5,7 +5,7 @@
 - Funktionalitäten hinzugefügt für Backend-Sichtbarkeiten und Backend-Name
 
 ### Behoben
-- Ein Fehler der beim Logout aus dem MyAccount Bereich in Ceres 5 aufgetretten wurde behoben 
+- Ein Fehler, der beim Logout aus dem MyAccount Bereich in Ceres 5 aufgetreten ist, wurde behoben.
 
 ## 1.1.0 (2019-09-27)
 
