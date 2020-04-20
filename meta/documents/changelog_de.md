@@ -1,8 +1,11 @@
 # Release Notes für Nachnahme
 
-## X.X.X (2019-12-17)
+## 1.1.1 (2019-04-20)
 ### Geändert
 - Funktionalitäten hinzugefügt für Backend-Sichtbarkeiten und Backend-Name
+
+### Behoben
+- Ein Fehler, der beim Logout aus dem MyAccount Bereich in Ceres 5 aufgetreten ist, wurde behoben.
 
 ## 1.1.0 (2019-09-27)
 

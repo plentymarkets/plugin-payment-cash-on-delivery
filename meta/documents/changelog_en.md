@@ -1,8 +1,11 @@
 # Release Notes for Cash on delivery
 
-## X.X.X (2019-12-17)
+## 1.1.1 (2019-04-20)
 ### Changed
 - Added methods for the backend visibility and backend name
+
+### Fixed
+- An error that occurred when logging out from the MyAccount area in Ceres 5 was fixed
 
 ## 1.1.0 (2019-09-27)
 
