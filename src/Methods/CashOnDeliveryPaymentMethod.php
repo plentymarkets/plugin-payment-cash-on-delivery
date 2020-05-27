@@ -184,4 +184,16 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodService
     {
         return $this->getName($lang);
     }
+
+    /**
+     * Get the url for the backend icon
+     *
+     * @return string
+     */
+    public function getBackendIcon(): string
+    {
+        $app = pluginApp(Application::class);
+        $icon = $app->getUrlPath('cashondelivery').'/images/logos/cashondelivery_backend_icon.svg';
+        return $icon;
+    }
 }
