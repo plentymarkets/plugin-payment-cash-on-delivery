@@ -134,7 +134,7 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodBaseService
      * @param  string  $lang
      * @return string
      */
-    public function getName(string $lang): string
+    public function getName(string $lang = 'de'): string
     {
         return $this->translator->trans('CashOnDelivery::PaymentMethod.name',[],$lang);
     }
@@ -145,7 +145,7 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodBaseService
      * @param  string  $lang
      * @return string
      */
-    public function getIcon(string $lang): string
+    public function getIcon(string $lang = 'de'): string
     {
         $logo = $this->config->get('CashOnDelivery.logo');
         if(strlen($logo) > 0) {
@@ -192,7 +192,7 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodBaseService
      * @param string $lang
      * @return string
      */
-    public function getBackendName(string $lang):string
+    public function getBackendName(string $lang = 'de'):string
     {
         return $this->getName($lang);
     }
