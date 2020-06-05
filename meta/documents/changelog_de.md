@@ -1,5 +1,10 @@
 # Release Notes für Nachnahme
 
+## 1.1.2 (2020-05-27)
+
+### Hinzugefügt
+- Icon für das Backend hinzugefügt
+
 ## 1.1.1 (2019-04-20)
 ### Geändert
 - Funktionalitäten hinzugefügt für Backend-Sichtbarkeiten und Backend-Name

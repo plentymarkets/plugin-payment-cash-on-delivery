@@ -4,7 +4,7 @@ namespace CashOnDelivery\Methods;
 
 use Plenty\Modules\Basket\Models\Basket;
 use Plenty\Modules\Frontend\Services\AccountService;
-use Plenty\Modules\Payment\Method\Contracts\PaymentMethodService;
+use Plenty\Modules\Payment\Method\Services\PaymentMethodBaseService;
 use Plenty\Modules\System\Contracts\WebstoreConfigurationRepositoryContract;
 use Plenty\Plugin\ConfigRepository;
 use Plenty\Modules\Order\Shipping\Contracts\ParcelServicePresetRepositoryContract;
@@ -19,7 +19,7 @@ use Plenty\Plugin\Translation\Translator;
  * Class CashOnDeliveryPaymentMethod
  * @package CashOnDelivery\Methods
  */
-class CashOnDeliveryPaymentMethod extends PaymentMethodService
+class CashOnDeliveryPaymentMethod extends PaymentMethodBaseService
 {
     /**
      * @var ConfigRepository
@@ -128,12 +128,24 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodService
         return true;
     }
 
-    public function getName($lang='de')
+    /**
+     * Get name of the payment method
+     *
+     * @param  string  $lang
+     * @return string
+     */
+    public function getName(string $lang = 'de'): string
     {
         return $this->translator->trans('CashOnDelivery::PaymentMethod.name',[],$lang);
     }
 
-    public function getIcon()
+    /**
+     * Get the payment method icon
+     *
+     * @param  string  $lang
+     * @return string
+     */
+    public function getIcon(string $lang = 'de'): string
     {
         $logo = $this->config->get('CashOnDelivery.logo');
         if(strlen($logo) > 0) {
@@ -144,12 +156,12 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodService
         return $app->getUrlPath('cashondelivery').'/images/logos/nachnahme.png';
     }
 
-    public function isSwitchableFrom()
+    public function isSwitchableFrom(): bool
     {
         return false;
     }
 
-    public function isSwitchableTo()
+    public function isSwitchableTo(): bool
     {
         return false;
     }
@@ -180,8 +192,20 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodService
      * @param string $lang
      * @return string
      */
-    public function getBackendName(string $lang):string
+    public function getBackendName(string $lang = 'de'):string
     {
         return $this->getName($lang);
+    }
+
+    /**
+     * Get the url for the backend icon
+     *
+     * @return string
+     */
+    public function getBackendIcon(): string
+    {
+        $app = pluginApp(Application::class);
+        $icon = $app->getUrlPath('cashondelivery').'/images/logos/cashondelivery_backend_icon.svg';
+        return $icon;
     }
 }

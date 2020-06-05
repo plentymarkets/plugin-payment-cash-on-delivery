@@ -1,5 +1,9 @@
 # Release Notes for Cash on delivery
 
+## 1.1.2 (2020-05-27)
+### Changed
+- Added Icon for the backend
+
 ## 1.1.1 (2019-04-20)
 ### Changed
 - Added methods for the backend visibility and backend name
@@ -32,7 +36,7 @@
 
 ## 1.0.4 (2018-08-08)
 
-### Hinzugefügt
+### Changed
 - Missing translations for the payment method name have been added.
 - Language-dependent texts can now be edited via the multilingualism interface.
 
