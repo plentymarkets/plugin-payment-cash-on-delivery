@@ -1,7 +1,9 @@
 # Release Notes for Cash on delivery
 
-## 1.1.2 (2020-05-27)
+## 1.1.2 (2021-12-30)
+
 ### Changed
+- Payment name can now be edited via the multilingualism interface.
 - Added Icon for the backend
 
 ## 1.1.1 (2019-04-20)
