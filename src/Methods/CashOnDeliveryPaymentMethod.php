@@ -158,12 +158,12 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodBaseService
 
     public function isSwitchableFrom(): bool
     {
-        return false;
+        return true;
     }
 
     public function isSwitchableTo(): bool
     {
-        return false;
+        return true;
     }
 
     /**
