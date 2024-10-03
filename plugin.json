@@ -18,6 +18,6 @@
   "require": [],
   "serviceProvider": "CashOnDelivery\\Providers\\CashOnDeliveryServiceProvider",
   "runOnBuild": [
-    "CashOnDelivery\\Migrations\\CreateSettingsTable",
+    "CashOnDelivery\\Migrations\\CreateSettingsTable"
   ]
 }
