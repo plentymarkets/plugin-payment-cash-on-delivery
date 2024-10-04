@@ -12,6 +12,7 @@
   ],
   "ignoredTranslationFiles":
   [
-    "MultilingualismConfig.properties"
+    "MultilingualismConfig.properties",
+    "Assistant.properties"
   ]
 }
