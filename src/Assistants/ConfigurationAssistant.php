@@ -78,7 +78,7 @@ class ConfigurationAssistant extends WizardProvider
     private function getIcon()
     {
         $app = pluginApp(Application::class);
-        return $app->getUrlPath('PaymentMethod') . '/images/logos/nachnahme.png';
+        return $app->getUrlPath('cashondelivery') . '/images/logos/nachnahme.png';
     }
 
     private function getMainWebstore()
