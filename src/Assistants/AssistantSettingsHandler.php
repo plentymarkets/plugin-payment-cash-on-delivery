@@ -21,13 +21,6 @@ class AssistantSettingsHandler implements WizardSettingsHandler
     public function handle(
         array $parameters
     ) {
-        //TODO: remove this
-        $this->getLogger(__CLASS__ . "::" . __METHOD__)->critical(
-            'ASSISTANT HANDLER',
-            [
-                'parameters' => $parameters
-            ]
-        );
         $data = $parameters['data'];
         $webstore = $data['webstore'];
 
