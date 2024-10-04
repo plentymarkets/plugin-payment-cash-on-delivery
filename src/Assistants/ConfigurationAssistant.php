@@ -44,7 +44,7 @@ class ConfigurationAssistant extends WizardProvider
                     "type" => 'select',
                     'defaultValue' => $this->getMainWebstore(),
                     "options" => [
-                        "name" => 'Mandant',
+                        'name' => 'Assistant.storeName',
                         'required' => true,
                         'listBoxValues' => $this->getWebstoreList(),
                     ],
