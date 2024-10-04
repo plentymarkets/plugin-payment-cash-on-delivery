@@ -35,7 +35,7 @@ class ConfigurationAssistant extends WizardProvider
             "shortDescription" => 'Assistant.shortDescription',
             "iconPath" => $this->getIcon(),
             "settingsHandlerClass" => AssistantSettingsHandler::class,
-            "translationNamespace" => "PaymentMethod",
+            "translationNamespace" => "Assistant",
             "key" => "payment-cashOnDelivery-assistant",
             "topics" => ["payment"],
             "priority" => 990,
