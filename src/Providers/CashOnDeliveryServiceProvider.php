@@ -82,7 +82,7 @@ class CashOnDeliveryServiceProvider extends ServiceProvider
         );
 
         pluginApp(WizardContainerContract::class)->register(
-            'payment-castOnDelivery-assistant',
+            'payment-cashOnDelivery-assistant',
             ConfigurationAssistant::class
         );
     }
