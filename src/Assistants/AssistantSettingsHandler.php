@@ -29,7 +29,7 @@ class AssistantSettingsHandler implements WizardSettingsHandler
             ]
         );
         $data = $parameters['data'];
-        $webstore = $data['client'];
+        $webstore = $data['webstore'];
 
         /** @var PluginSetRepositoryContract $pluginSetRepo */
         $this->pluginSetRepository = pluginApp(PluginSetRepositoryContract::class);

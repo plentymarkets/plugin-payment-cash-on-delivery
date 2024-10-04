@@ -40,7 +40,7 @@ class ConfigurationAssistant extends WizardProvider
             "topics" => ["payment"],
             "priority" => 990,
             "options" => [
-                "config_name" => [
+                "webstore" => [
                     "type" => 'select',
                     'defaultValue' => $this->getMainWebstore(),
                     "options" => [
