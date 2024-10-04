@@ -50,8 +50,8 @@ class Settings extends Model
      */
     public function updateValues(array $data)
     {
-        if (isset($data['countriesOfDelivery'])) {
-            $this->value['countriesOfDelivery'] = $data['countriesOfDelivery'];
+        if (isset($data['deliveryCountries'])) {
+            $this->value['deliveryCountries'] = $data['deliveryCountries'];
         }
         if (isset($data['domesticSurcharge'])) {
             $this->value['domesticSurcharge'] = $data['domesticSurcharge'];
