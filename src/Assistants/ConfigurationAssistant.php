@@ -31,7 +31,7 @@ class ConfigurationAssistant extends WizardProvider
     protected function structure(): array
     {
         return [
-            "title" => 'Assistant.assistantTitle',
+            "title" => 'Assistant.title',
             "shortDescription" => 'Assistant.shortDescription',
             "iconPath" => $this->getIcon(),
             "settingsHandlerClass" => AssistantSettingsHandler::class,
