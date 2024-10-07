@@ -53,17 +53,31 @@ class Settings extends Model
         if (isset($data['deliveryCountries'])) {
             $this->value['deliveryCountries'] = $data['deliveryCountries'];
         }
-        if (isset($data['domesticSurcharge'])) {
-            $this->value['domesticSurcharge'] = $data['domesticSurcharge'];
+
+        if (isset($data['domesticSurchargeFlatRate'])) {
+            $this->value['domesticSurchargeFlatRate'] = $data['domesticSurchargeFlatRate'];
         }
-        if (isset($data['foreignSurcharge'])) {
-            $this->value['foreignSurcharge'] = $data['foreignSurcharge'];
+        if (isset($data['domesticSurchargePercentage'])) {
+            $this->value['domesticSurchargePercentage'] = $data['domesticSurchargePercentage'];
         }
-        if (isset($data['domesticStatistics'])) {
-            $this->value['domesticStatistics'] = $data['domesticStatistics'];
+        if (isset($data['foreignSurchargeFlatRate'])) {
+            $this->value['foreignSurchargeFlatRate'] = $data['foreignSurchargeFlatRate'];
         }
-        if (isset($data['foreignStatistics'])) {
-            $this->value['foreignStatistics'] = $data['foreignStatistics'];
+        if (isset($data['foreignSurchargePercentage'])) {
+            $this->value['foreignSurchargePercentage'] = $data['foreignSurchargePercentage'];
+        }
+
+        if (isset($data['domesticStatisticsFlatRate'])) {
+            $this->value['domesticStatisticsFlatRate'] = $data['domesticStatisticsFlatRate'];
+        }
+        if (isset($data['domesticStatisticsPercentage'])) {
+            $this->value['domesticStatisticsPercentage'] = $data['domesticStatisticsPercentage'];
+        }
+        if (isset($data['foreignStatisticsFlatRate'])) {
+            $this->value['foreignStatisticsFlatRate'] = $data['foreignStatisticsFlatRate'];
+        }
+        if (isset($data['foreignStatisticsPercentage'])) {
+            $this->value['foreignStatisticsPercentage'] = $data['foreignStatisticsPercentage'];
         }
 
         return $this->save();
