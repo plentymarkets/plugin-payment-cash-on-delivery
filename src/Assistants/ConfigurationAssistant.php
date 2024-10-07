@@ -70,6 +70,92 @@ class ConfigurationAssistant extends WizardProvider
                             ],
                         ],
                     ],
+                ],
+                "stepTwo" => [
+                    "title" => "Assistant.stepTwoTitle",
+                    "sections" => [
+                        [
+                            "title" => 'Assistant.surcharge',
+                            "description" => 'Assistant.surchargeDescription',
+                            "form" => [
+                                "domesticSurchargeFlatRate" => [
+                                    'type' => 'text',
+                                    'defaultValue' => 0.00,
+                                    'options' => [
+                                        'name' => 'Assistant.domesticSurchargeFlatRate',
+                                        'minValue' => 0.00
+                                    ],
+                                ],
+                                "domesticSurchargePercentage" => [
+                                    'type' => 'text',
+                                    'defaultValue' => 0.00,
+                                    'options' => [
+                                        'name' => 'Assistant.domesticSurchargePercentage',
+                                        'minValue' => 0.00
+                                    ],
+                                ],
+                                "foreignSurchargeFlatRate" => [
+                                    'type' => 'text',
+                                    'defaultValue' => 0.00,
+                                    'options' => [
+                                        'name' => 'Assistant.foreignSurchargeFlatRate',
+                                        'minValue' => 0.00
+                                    ],
+                                ],
+                                "foreignSurchargePercentage" => [
+                                    'type' => 'text',
+                                    'defaultValue' => 0.00,
+                                    'options' => [
+                                        'name' => 'Assistant.foreignSurchargePercentage',
+                                        'minValue' => 0.00
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                "stepThree" => [
+                    "title" => "Assistant.stepThreeTitle",
+                    "sections" => [
+                        [
+                            "title" => 'Assistant.statistics',
+                            "description" => 'Assistant.statisticsDescription',
+                            "form" => [
+                                "domesticStatisticsFlatRate" => [
+                                    'type' => 'text',
+                                    'defaultValue' => 0.00,
+                                    'options' => [
+                                        'name' => 'Assistant.domesticStatisticsFlatRate',
+                                        'minValue' => 0.00
+                                    ],
+                                ],
+                                "domesticStatisticsPercentage" => [
+                                    'type' => 'text',
+                                    'defaultValue' => 0.00,
+                                    'options' => [
+                                        'name' => 'Assistant.domesticStatisticsPercentage',
+                                        'minValue' => 0.00
+                                    ],
+                                ],
+                                "foreignStatisticsFlatRate" => [
+                                    'type' => 'text',
+                                    'defaultValue' => 0.00,
+                                    'options' => [
+                                        'name' => 'Assistant.foreignStatisticsFlatRate',
+                                        'minValue' => 0.00
+                                    ],
+                                ],
+                                "foreignStatisticsPercentage" => [
+                                    'type' => 'text',
+                                    'defaultValue' => 0.00,
+                                    'options' => [
+                                        'name' => 'Assistant.foreignStatisticsPercentage',
+                                        'minValue' => 0.00
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
                 ]
             ]
         ];
