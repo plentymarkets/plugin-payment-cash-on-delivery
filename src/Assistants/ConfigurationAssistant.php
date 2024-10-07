@@ -79,7 +79,7 @@ class ConfigurationAssistant extends WizardProvider
                             "description" => 'Assistant.surchargeDescription',
                             "form" => [
                                 "domesticSurchargeFlatRate" => [
-                                    'type' => 'text',
+                                    'type' => 'number',
                                     'defaultValue' => 0.00,
                                     'options' => [
                                         'name' => 'Assistant.domesticSurchargeFlatRate',
@@ -87,7 +87,7 @@ class ConfigurationAssistant extends WizardProvider
                                     ],
                                 ],
                                 "domesticSurchargePercentage" => [
-                                    'type' => 'text',
+                                    'type' => 'number',
                                     'defaultValue' => 0.00,
                                     'options' => [
                                         'name' => 'Assistant.domesticSurchargePercentage',
@@ -95,7 +95,7 @@ class ConfigurationAssistant extends WizardProvider
                                     ],
                                 ],
                                 "foreignSurchargeFlatRate" => [
-                                    'type' => 'text',
+                                    'type' => 'number',
                                     'defaultValue' => 0.00,
                                     'options' => [
                                         'name' => 'Assistant.foreignSurchargeFlatRate',
@@ -103,7 +103,7 @@ class ConfigurationAssistant extends WizardProvider
                                     ],
                                 ],
                                 "foreignSurchargePercentage" => [
-                                    'type' => 'text',
+                                    'type' => 'number',
                                     'defaultValue' => 0.00,
                                     'options' => [
                                         'name' => 'Assistant.foreignSurchargePercentage',
@@ -122,7 +122,7 @@ class ConfigurationAssistant extends WizardProvider
                             "description" => 'Assistant.statisticsDescription',
                             "form" => [
                                 "domesticStatisticsFlatRate" => [
-                                    'type' => 'text',
+                                    'type' => 'number',
                                     'defaultValue' => 0.00,
                                     'options' => [
                                         'name' => 'Assistant.domesticStatisticsFlatRate',
@@ -130,7 +130,7 @@ class ConfigurationAssistant extends WizardProvider
                                     ],
                                 ],
                                 "domesticStatisticsPercentage" => [
-                                    'type' => 'text',
+                                    'type' => 'number',
                                     'defaultValue' => 0.00,
                                     'options' => [
                                         'name' => 'Assistant.domesticStatisticsPercentage',
@@ -138,7 +138,7 @@ class ConfigurationAssistant extends WizardProvider
                                     ],
                                 ],
                                 "foreignStatisticsFlatRate" => [
-                                    'type' => 'text',
+                                    'type' => 'number',
                                     'defaultValue' => 0.00,
                                     'options' => [
                                         'name' => 'Assistant.foreignStatisticsFlatRate',
@@ -146,7 +146,7 @@ class ConfigurationAssistant extends WizardProvider
                                     ],
                                 ],
                                 "foreignStatisticsPercentage" => [
-                                    'type' => 'text',
+                                    'type' => 'number',
                                     'defaultValue' => 0.00,
                                     'options' => [
                                         'name' => 'Assistant.foreignStatisticsPercentage',
