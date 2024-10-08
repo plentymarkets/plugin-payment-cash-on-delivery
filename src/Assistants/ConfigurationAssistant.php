@@ -80,42 +80,42 @@ class ConfigurationAssistant extends WizardProvider
                             "form" => [
                                 "domesticSurchargeType" => [
                                     'type' => 'select',
-                                    'listBoxValues' => [
-                                        [
-                                            "caption" => "Assistant.flatRate",
-                                            "value" => 'flatRate'
-                                        ],
-                                        [
-                                            "caption" => "Assistant.percentage",
-                                            "value" => "percentage"
-                                        ],
-                                    ],
                                     'options' => [
-                                        'name' => 'Assistant.domesticSurchargeType'
+                                        'name' => 'Assistant.domesticSurchargeType',
+                                        'listBoxValues' => [
+                                            [
+                                                "caption" => "Assistant.flatRate",
+                                                "value" => 'flatRate'
+                                            ],
+                                            [
+                                                "caption" => "Assistant.percentage",
+                                                "value" => "percentage"
+                                            ],
+                                        ],
                                     ],
                                 ],
                                 "domesticSurchargeValue" => [
                                     'type' => 'number',
                                     'defaultValue' => 0.00,
                                     'options' => [
-                                        'name' => 'Assistant.domesticSurchargePercentage',
+                                        'name' => 'Assistant.domesticSurchargeValue',
                                         'minValue' => 0.00
                                     ],
                                 ],
                                 "foreignSurchargeType" => [
                                     'type' => 'select',
-                                    'listBoxValues' => [
-                                        [
-                                            "caption" => "Assistant.flatRate",
-                                            "value" => 'flatRate'
-                                        ],
-                                        [
-                                            "caption" => "Assistant.percentage",
-                                            "value" => "percentage"
-                                        ],
-                                    ],
                                     'options' => [
-                                        'name' => 'Assistant.foreignSurchargeType'
+                                        'name' => 'Assistant.foreignSurchargeType',
+                                        'listBoxValues' => [
+                                            [
+                                                "caption" => "Assistant.flatRate",
+                                                "value" => 'flatRate'
+                                            ],
+                                            [
+                                                "caption" => "Assistant.percentage",
+                                                "value" => "percentage"
+                                            ],
+                                        ],
                                     ],
                                 ],
                                 "foreignSurchargeValue" => [
