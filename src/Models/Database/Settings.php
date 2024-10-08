@@ -54,30 +54,17 @@ class Settings extends Model
             $this->value['deliveryCountries'] = $data['deliveryCountries'];
         }
 
-        if (isset($data['domesticSurchargeFlatRate'])) {
-            $this->value['domesticSurchargeFlatRate'] = $data['domesticSurchargeFlatRate'];
+        if (isset($data['domesticSurchargeType'])) {
+            $this->value['domesticSurchargeType'] = $data['domesticSurchargeType'];
         }
-        if (isset($data['domesticSurchargePercentage'])) {
-            $this->value['domesticSurchargePercentage'] = $data['domesticSurchargePercentage'];
+        if (isset($data['domesticSurchargeValue'])) {
+            $this->value['domesticSurchargeValue'] = $data['domesticSurchargeValue'];
         }
-        if (isset($data['foreignSurchargeFlatRate'])) {
-            $this->value['foreignSurchargeFlatRate'] = $data['foreignSurchargeFlatRate'];
+        if (isset($data['foreignSurchargeType'])) {
+            $this->value['foreignSurchargeType'] = $data['foreignSurchargeType'];
         }
-        if (isset($data['foreignSurchargePercentage'])) {
-            $this->value['foreignSurchargePercentage'] = $data['foreignSurchargePercentage'];
-        }
-
-        if (isset($data['domesticStatisticsFlatRate'])) {
-            $this->value['domesticStatisticsFlatRate'] = $data['domesticStatisticsFlatRate'];
-        }
-        if (isset($data['domesticStatisticsPercentage'])) {
-            $this->value['domesticStatisticsPercentage'] = $data['domesticStatisticsPercentage'];
-        }
-        if (isset($data['foreignStatisticsFlatRate'])) {
-            $this->value['foreignStatisticsFlatRate'] = $data['foreignStatisticsFlatRate'];
-        }
-        if (isset($data['foreignStatisticsPercentage'])) {
-            $this->value['foreignStatisticsPercentage'] = $data['foreignStatisticsPercentage'];
+        if (isset($data['foreignSurchargeValue'])) {
+            $this->value['foreignSurchargeValue'] = $data['foreignSurchargeValue'];
         }
 
         return $this->save();
