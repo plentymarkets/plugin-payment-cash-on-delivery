@@ -78,15 +78,23 @@ class ConfigurationAssistant extends WizardProvider
                             "title" => 'Assistant.surcharge',
                             "description" => 'Assistant.surchargeDescription',
                             "form" => [
-                                "domesticSurchargeFlatRate" => [
-                                    'type' => 'number',
-                                    'defaultValue' => 0.00,
+                                "domesticSurchargeType" => [
+                                    'type' => 'select',
+                                    'listBoxValues' => [
+                                        [
+                                            "caption" => "Assistant.flatRate",
+                                            "value" => 'flatRate'
+                                        ],
+                                        [
+                                            "caption" => "Assistant.percentage",
+                                            "value" => "percentage"
+                                        ],
+                                    ],
                                     'options' => [
-                                        'name' => 'Assistant.domesticSurchargeFlatRate',
-                                        'minValue' => 0.00
+                                        'name' => 'Assistant.domesticSurchargeType'
                                     ],
                                 ],
-                                "domesticSurchargePercentage" => [
+                                "domesticSurchargeValue" => [
                                     'type' => 'number',
                                     'defaultValue' => 0.00,
                                     'options' => [
@@ -94,62 +102,27 @@ class ConfigurationAssistant extends WizardProvider
                                         'minValue' => 0.00
                                     ],
                                 ],
-                                "foreignSurchargeFlatRate" => [
-                                    'type' => 'number',
-                                    'defaultValue' => 0.00,
+                                "foreignSurchargeType" => [
+                                    'type' => 'select',
+                                    'listBoxValues' => [
+                                        [
+                                            "caption" => "Assistant.flatRate",
+                                            "value" => 'flatRate'
+                                        ],
+                                        [
+                                            "caption" => "Assistant.percentage",
+                                            "value" => "percentage"
+                                        ],
+                                    ],
                                     'options' => [
-                                        'name' => 'Assistant.foreignSurchargeFlatRate',
-                                        'minValue' => 0.00
+                                        'name' => 'Assistant.foreignSurchargeType'
                                     ],
                                 ],
-                                "foreignSurchargePercentage" => [
+                                "foreignSurchargeValue" => [
                                     'type' => 'number',
                                     'defaultValue' => 0.00,
                                     'options' => [
-                                        'name' => 'Assistant.foreignSurchargePercentage',
-                                        'minValue' => 0.00
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                "stepThree" => [
-                    "title" => "Assistant.stepThreeTitle",
-                    "sections" => [
-                        [
-                            "title" => 'Assistant.statistics',
-                            "description" => 'Assistant.statisticsDescription',
-                            "form" => [
-                                "domesticStatisticsFlatRate" => [
-                                    'type' => 'number',
-                                    'defaultValue' => 0.00,
-                                    'options' => [
-                                        'name' => 'Assistant.domesticStatisticsFlatRate',
-                                        'minValue' => 0.00
-                                    ],
-                                ],
-                                "domesticStatisticsPercentage" => [
-                                    'type' => 'number',
-                                    'defaultValue' => 0.00,
-                                    'options' => [
-                                        'name' => 'Assistant.domesticStatisticsPercentage',
-                                        'minValue' => 0.00
-                                    ],
-                                ],
-                                "foreignStatisticsFlatRate" => [
-                                    'type' => 'number',
-                                    'defaultValue' => 0.00,
-                                    'options' => [
-                                        'name' => 'Assistant.foreignStatisticsFlatRate',
-                                        'minValue' => 0.00
-                                    ],
-                                ],
-                                "foreignStatisticsPercentage" => [
-                                    'type' => 'number',
-                                    'defaultValue' => 0.00,
-                                    'options' => [
-                                        'name' => 'Assistant.foreignStatisticsPercentage',
+                                        'name' => 'Assistant.foreignSurchargeValue',
                                         'minValue' => 0.00
                                     ],
                                 ],
