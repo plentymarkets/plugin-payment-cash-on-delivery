@@ -3,12 +3,15 @@
 namespace CashOnDelivery\Helpers;
 
 
+use Plenty\Log\Traits\Loggable;
 use Plenty\Modules\Accounting\Contracts\DetermineShopCountryContract;
 use Plenty\Modules\Basket\Contracts\BasketRepositoryContract;
 use Plenty\Modules\Basket\Models\Basket;
 
 class SurchargeHelper
 {
+    use Loggable;
+
     protected BasketRepositoryContract $basketRepository;
 
     protected DetermineShopCountryContract $determineShopCountry;
@@ -27,17 +30,24 @@ class SurchargeHelper
 
     public function getSurchargeForBasket(): float
     {
+        $fee = 0;
+
         /** @var Basket $basket */
         $basket = $this->basketRepository->load();
         $shippingCountryId = $basket->shippingCountryId;
         $case = $this->isDomesticOrForeign($shippingCountryId);
         $currentSurchargeSettings = $this->settingsHelper->getSurchargeSettings();
         if ($currentSurchargeSettings[$case]['type'] == 'flatRate') {
-            return $currentSurchargeSettings[$case]['value'];
+            $fee = $currentSurchargeSettings[$case]['value'];
         } elseif ($currentSurchargeSettings[$case]['type'] == 'percentage') {
-            return $basket->basketAmount * ((100 + $currentSurchargeSettings[$case]['value']) / 100);
+            $fee = $basket->basketAmount * ((100 + $currentSurchargeSettings[$case]['value']) / 100);
         }
-        return 0;
+
+        $this->getLogger(__CLASS__ . '::' . __METHOD__)->critical(__METHOD__, [
+            'fee' => $fee
+        ]);
+
+        return $fee;
     }
 
     private function isDomesticOrForeign(int $shippingCountryId): string
