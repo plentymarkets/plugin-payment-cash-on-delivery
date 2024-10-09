@@ -218,7 +218,8 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodBaseService
      */
     public function getFee(): float
     {
-        return $this->surchargeHelper->getSurchargeForBasket();
+        $whatever = $this->surchargeHelper->getSurchargeForBasket();
+        return 1.99;
     }
 
     /**
