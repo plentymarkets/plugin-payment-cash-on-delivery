@@ -71,4 +71,10 @@ class SettingsHelper
 
         return $this->cachingRepository->get(self::CACHE_KEY . '_' . $webstoreId . '_' . $pluginSetId, []);
     }
+
+    public function getDeliveryCountryIds(): array
+    {
+        $currentSettings = $this->getCurrentSettings();
+        return $currentSettings['deliveryCountries'] ?? [];
+    }
 }
