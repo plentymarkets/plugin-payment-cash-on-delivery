@@ -21,11 +21,11 @@ class SurchargeHelper
     public function __construct(
         BasketRepositoryContract $basketRepository,
         DetermineShopCountryContract $determineShopCountry,
-        SettingsHelper $settingsService
+        SettingsHelper $settingsHelper
     ) {
         $this->basketRepository = $basketRepository;
         $this->determineShopCountry = $determineShopCountry;
-        $this->settingsHelper = $settingsService;
+        $this->settingsHelper = $settingsHelper;
     }
 
     public function getSurchargeForBasket(): float
