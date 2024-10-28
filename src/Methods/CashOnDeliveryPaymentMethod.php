@@ -2,9 +2,11 @@
 
 namespace CashOnDelivery\Methods;
 
+use CashOnDelivery\Helpers\SettingsHelper;
 use CashOnDelivery\Helpers\SurchargeHelper;
 use Plenty\Modules\Basket\Models\Basket;
 use Plenty\Modules\Frontend\Services\AccountService;
+use Plenty\Modules\Order\Shipping\Countries\Contracts\CountryRepositoryContract;
 use Plenty\Modules\Payment\Method\Services\PaymentMethodBaseService;
 use Plenty\Modules\System\Contracts\WebstoreConfigurationRepositoryContract;
 use Plenty\Plugin\ConfigRepository;
@@ -55,6 +57,13 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodBaseService
      */
     protected SurchargeHelper $surchargeHelper;
 
+    /**
+     * @var CountryRepositoryContract
+     */
+    protected CountryRepositoryContract $countryRepository;
+
+    protected SettingsHelper $settingsHelper;
+
     public function __construct(
         ConfigRepository $config,
         Checkout $checkout,
@@ -62,7 +71,9 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodBaseService
         BasketRepositoryContract $basketRepo,
         ContactRepositoryContract $contactRepository,
         Translator $translator,
-        SurchargeHelper $surchargeHelper
+        SurchargeHelper $surchargeHelper,
+        CountryRepositoryContract $countryRepository,
+        SettingsHelper $settingsHelper
     ) {
         $this->config = $config;
         $this->checkout = $checkout;
@@ -71,6 +82,8 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodBaseService
         $this->contactRepository = $contactRepository;
         $this->translator = $translator;
         $this->surchargeHelper = $surchargeHelper;
+        $this->countryRepository = $countryRepository;
+        $this->settingsHelper = $settingsHelper;
     }
 
     /**
@@ -128,7 +141,15 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodBaseService
                 }
             }
         }
-        //TODO: implement countries of delivery
+
+        $checkoutCountryId = $this->countryRepository->getCountryById(
+            $this->checkout->getShippingCountryId()
+        );
+        $allowedDeliveryCountryIds = $this->settingsHelper->getDeliveryCountryIds();
+        if (!in_array($checkoutCountryId, $allowedDeliveryCountryIds)) {
+            return false;
+        }
+
         return $codAvailable;
     }
 
@@ -218,8 +239,7 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodBaseService
      */
     public function getFee(): float
     {
-        $whatever = $this->surchargeHelper->getSurchargeForBasket();
-        return 1.99;
+        return $this->surchargeHelper->getSurchargeForBasket();
     }
 
     /**
