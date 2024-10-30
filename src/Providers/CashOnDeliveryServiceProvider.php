@@ -85,5 +85,7 @@ class CashOnDeliveryServiceProvider extends ServiceProvider
             'payment-cashOnDelivery-assistant',
             ConfigurationAssistant::class
         );
+
+        $this->getApplication()->singleton(CashOnDeliveryPaymentMethod::class);
     }
 }
