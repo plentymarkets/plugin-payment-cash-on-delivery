@@ -37,12 +37,12 @@ class SettingsHelper
         $currentSettings = $this->getCurrentSettings();
         return [
             'domestic' => [
-                'type' => $currentSettings['domesticSurchargeType'],
-                'value' => $currentSettings['domesticSurchargeValue']
+                'type' => $currentSettings->domesticSurchargeType,
+                'value' => $currentSettings->domesticSurchargeValue
             ],
             'foreign' => [
-                'type' => $currentSettings['foreignSurchargeType'],
-                'value' => $currentSettings['foreignSurchargeValue']
+                'type' => $currentSettings->foreignSurchargeType,
+                'value' => $currentSettings->foreignSurchargeValue
             ],
         ];
     }
@@ -75,6 +75,6 @@ class SettingsHelper
     public function getDeliveryCountryIds(): array
     {
         $currentSettings = $this->getCurrentSettings();
-        return $currentSettings['deliveryCountries'] ?? [];
+        return $currentSettings->deliveryCountries ?? [];
     }
 }
