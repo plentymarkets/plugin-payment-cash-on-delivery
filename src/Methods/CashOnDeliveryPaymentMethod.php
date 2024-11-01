@@ -142,9 +142,7 @@ class CashOnDeliveryPaymentMethod extends PaymentMethodBaseService
             }
         }
 
-        $checkoutCountryId = $this->countryRepository->getCountryById(
-            $this->checkout->getShippingCountryId()
-        );
+        $checkoutCountryId = $this->checkout->getShippingCountryId();
         $allowedDeliveryCountryIds = $this->settingsHelper->getDeliveryCountryIds();
         if (!in_array($checkoutCountryId, $allowedDeliveryCountryIds)) {
             return false;

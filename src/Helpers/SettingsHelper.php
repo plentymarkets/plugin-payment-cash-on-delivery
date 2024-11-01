@@ -62,10 +62,10 @@ class SettingsHelper
             if (is_array($setting) && $setting[0] instanceof Settings) {
                 $this->cachingRepository->add(
                     self::CACHE_KEY . '_' . $webstoreId . '_' . $pluginSetId,
-                    $setting[0],
+                    $setting[0]->value,
                     1440
                 );
-                return $setting[0];
+                return $setting[0]->value;
             }
         }
 
