@@ -37,12 +37,12 @@ class SettingsHelper
         $currentSettings = $this->getCurrentSettings();
         return [
             'domestic' => [
-                'type' => $currentSettings->domesticSurchargeType,
-                'value' => $currentSettings->domesticSurchargeValue
+                'type' => $currentSettings['domesticSurchargeType'],
+                'value' => $currentSettings['domesticSurchargeValue']
             ],
             'foreign' => [
-                'type' => $currentSettings->foreignSurchargeType,
-                'value' => $currentSettings->foreignSurchargeValue
+                'type' => $currentSettings['foreignSurchargeType'],
+                'value' => $currentSettings['foreignSurchargeValue']
             ],
         ];
     }
@@ -62,10 +62,10 @@ class SettingsHelper
             if (is_array($setting) && $setting[0] instanceof Settings) {
                 $this->cachingRepository->add(
                     self::CACHE_KEY . '_' . $webstoreId . '_' . $pluginSetId,
-                    $setting[0]->value,
+                    (array)$setting[0]->value,
                     1440
                 );
-                return $setting[0]->value;
+                return (array)$setting[0]->value;
             }
         }
 
@@ -75,6 +75,9 @@ class SettingsHelper
     public function getDeliveryCountryIds(): array
     {
         $currentSettings = $this->getCurrentSettings();
-        return $currentSettings->deliveryCountries ?? [];
+        if (isset($currentSettings['deliveryCountries']) && is_array($currentSettings['deliveryCountries'])) {
+            return $currentSettings['deliveryCountries'];
+        };
+        return [];
     }
 }
