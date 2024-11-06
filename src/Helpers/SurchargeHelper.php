@@ -40,7 +40,7 @@ class SurchargeHelper
         if ($currentSurchargeSettings[$case]['type'] == 'flatRate') {
             $fee = $currentSurchargeSettings[$case]['value'];
         } elseif ($currentSurchargeSettings[$case]['type'] == 'percentage') {
-            $fee = $basket->basketAmount * ($currentSurchargeSettings[$case]['value'] / 100);
+            $fee = $basket->itemSum * ($currentSurchargeSettings[$case]['value'] / 100);
         }
 
         $this->getLogger(__CLASS__ . '::' . __METHOD__)->critical(__METHOD__, [
