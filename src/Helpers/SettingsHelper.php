@@ -80,4 +80,9 @@ class SettingsHelper
         };
         return [];
     }
+
+    public function clearCachedSettings(int $webstoreId, int $pluginSetId): void
+    {
+        $this->cachingRepository->forget(self::CACHE_KEY . '_' . $webstoreId . '_' . $pluginSetId);
+    }
 }

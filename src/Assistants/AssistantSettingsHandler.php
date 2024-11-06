@@ -2,6 +2,7 @@
 
 namespace CashOnDelivery\Assistants;
 
+use CashOnDelivery\Helpers\SettingsHelper;
 use CashOnDelivery\Models\Database\Settings;
 use Plenty\Modules\Plugin\Contracts\PluginRepositoryContract;
 use Plenty\Modules\Plugin\PluginSet\Contracts\PluginSetRepositoryContract;
@@ -85,5 +86,9 @@ class AssistantSettingsHandler implements WizardSettingsHandler
                 ]
             );
         }
+
+        /** @var SettingsHelper $settingsHelper */
+        $settingsHelper = pluginApp(SettingsHelper::class);
+        $settingsHelper->clearCachedSettings($webstoreId, $pluginSetId);
     }
 }
