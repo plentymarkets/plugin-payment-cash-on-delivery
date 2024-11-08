@@ -2,6 +2,8 @@
 
 ## 1.1.3 (TBA)
 
+### Hinzugefügt
+- Aufpreise und Lieferländer können nun im Assistenten konfiguriert werden.
 ## 1.1.2 (2021-12-30)
 
 ### Hinzugefügt
