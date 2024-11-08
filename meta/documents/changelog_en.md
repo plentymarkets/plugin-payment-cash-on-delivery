@@ -2,6 +2,9 @@
 
 ## 1.1.3 (TBA)
 
+### Changed
+- Surcharges and delivery country options are now configurable in the assistant.
+
 ## 1.1.2 (2021-12-30)
 
 ### Changed
