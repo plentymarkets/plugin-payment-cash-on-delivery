@@ -1,5 +1,10 @@
 # Release Notes for Cash on delivery
 
+## 1.1.3 (2025-03-17)
+
+### Changed
+- Surcharges and delivery country options are now configurable in the assistant.
+
 ## 1.1.2 (2021-12-30)
 
 ### Changed
