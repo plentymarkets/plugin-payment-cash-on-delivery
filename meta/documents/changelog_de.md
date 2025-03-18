@@ -1,6 +1,6 @@
 # Release Notes für Nachnahme
 
-## 1.1.3 (2025-03-17)
+## 1.1.3 (2025-03-18)
 
 ### Hinzugefügt
 - Aufpreise und Lieferländer können nun im Assistenten konfiguriert werden.
