@@ -47,11 +47,6 @@ class SurchargeHelper
             'fee' => $fee
         ]);
 
-        $this->getLogger(__CLASS__ . '::' . __METHOD__)->debug('', 'Surcharge fee: ' . $fee);
-        $this->getLogger(__CLASS__ . '::' . __METHOD__)->report('CashOnDelivery::debug.surchargeFee', 'Surcharge fee: ' . $fee);
-        $this->getLogger(__CLASS__ . '::' . __METHOD__)->report('', 'Surcharge fee: ' . $fee);
-
-
         return $fee;
     }
 
