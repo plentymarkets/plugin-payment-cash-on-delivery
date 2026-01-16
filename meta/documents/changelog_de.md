@@ -1,5 +1,10 @@
 # Release Notes für Nachnahme
 
+## 1.1.4 (2026-01-16)
+
+### Hinzugefügt
+- Protokollierungsfehler bei der Berechnung von Zuschlägen behoben.
+
 ## 1.1.3 (2025-03-18)
 
 ### Hinzugefügt

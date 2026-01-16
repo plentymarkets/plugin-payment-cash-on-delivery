@@ -43,7 +43,7 @@ class SurchargeHelper
             $fee = $basket->itemSum * ($currentSurchargeSettings[$case]['value'] / 100);
         }
 
-        $this->getLogger(__CLASS__ . '::' . __METHOD__)->critical(__METHOD__, [
+        $this->getLogger(__CLASS__ . '::' . __METHOD__)->debug('CashOnDelivery::debug.surchargeFee', [
             'fee' => $fee
         ]);
 

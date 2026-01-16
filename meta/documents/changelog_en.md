@@ -1,5 +1,10 @@
 # Release Notes for Cash on delivery
 
+## 1.1.4 (2026-01-16)
+
+### Changed
+- Fix logging error on calculating surcharges.
+
 ## 1.1.3 (2025-03-18)
 
 ### Changed
