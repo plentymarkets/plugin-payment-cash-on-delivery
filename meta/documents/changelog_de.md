@@ -1,5 +1,10 @@
 # Release Notes für Nachnahme
 
+## 1.1.5 (2026-01-19)
+
+### Hinzugefügt
+- Texte und Logos aktualisiert.
+
 ## 1.1.4 (2026-01-16)
 
 ### Hinzugefügt

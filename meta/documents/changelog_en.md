@@ -1,5 +1,10 @@
 # Release Notes for Cash on delivery
 
+## 1.1.5 (2026-01-19)
+
+### Changed
+- Updated the texts and logos.
+
 ## 1.1.4 (2026-01-16)
 
 ### Changed
